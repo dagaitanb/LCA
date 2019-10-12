@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCA.WebApi", "LCA.WebApi.csproj", "{7C4B49B4-18F6-4304-9580-11F4BF04AB7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCA.WebApi.Tests", "..\LCA.WebApi.Tests\LCA.WebApi.Tests.csproj", "{DBB19776-50AC-46F0-9827-8B0E422B2C33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C4B49B4-18F6-4304-9580-11F4BF04AB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4B49B4-18F6-4304-9580-11F4BF04AB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4B49B4-18F6-4304-9580-11F4BF04AB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4B49B4-18F6-4304-9580-11F4BF04AB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBB19776-50AC-46F0-9827-8B0E422B2C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB19776-50AC-46F0-9827-8B0E422B2C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB19776-50AC-46F0-9827-8B0E422B2C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB19776-50AC-46F0-9827-8B0E422B2C33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EFB0DC1-51ED-4DD4-9A48-2A0E3C1D1B42}
+	EndGlobalSection
+EndGlobal
