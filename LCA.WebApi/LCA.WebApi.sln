@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCA.WebApi", "LCA.WebApi.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCA.WebApi.Tests", "..\LCA.WebApi.Tests\LCA.WebApi.Tests.csproj", "{DBB19776-50AC-46F0-9827-8B0E422B2C33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCA.WebApi.Model", "..\LCA.WebApi.Model\LCA.WebApi.Model.csproj", "{4BFB0D43-3299-4A29-B810-711CC85EBCDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LCA.WebApi.Model", "..\LCA.WebApi.Model\LCA.WebApi.Model.csproj", "{4BFB0D43-3299-4A29-B810-711CC85EBCDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCA.WebApi.BusinessLogic", "..\LCA.WebApi.BusinessLogic\LCA.WebApi.BusinessLogic.csproj", "{5DF003E5-6A03-4FAC-A42F-7235E3F9C1CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4BFB0D43-3299-4A29-B810-711CC85EBCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BFB0D43-3299-4A29-B810-711CC85EBCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BFB0D43-3299-4A29-B810-711CC85EBCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF003E5-6A03-4FAC-A42F-7235E3F9C1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF003E5-6A03-4FAC-A42F-7235E3F9C1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF003E5-6A03-4FAC-A42F-7235E3F9C1CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF003E5-6A03-4FAC-A42F-7235E3F9C1CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

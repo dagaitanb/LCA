@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LCA.WebApi.Model
 {
-    class BinaryTree
+    public class BinaryTree
     {
         /// <summary>
         /// Root node
@@ -23,7 +23,7 @@ namespace LCA.WebApi.Model
         /// Method to add nodes
         /// </summary>
         /// <param name="value"></param>
-        public void add (long value)
+        public void Add(long value)
         {
             if (Root == null)
             {
@@ -31,7 +31,7 @@ namespace LCA.WebApi.Model
                 return;
             }
 
-            addRecursively(Root, new Node(value));
+            AddRecursively(Root, new Node(value));
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace LCA.WebApi.Model
         /// </summary>
         /// <param name="root">Root Node</param>
         /// <param name="newNode">New Node to add</param>
-        public void addRecursively(Node root, Node newNode)
+        public void AddRecursively(Node root, Node newNode)
         {
             if (root == null)
                 root = newNode;
@@ -49,14 +49,14 @@ namespace LCA.WebApi.Model
                 if (Root.Left == null)
                     Root.Left = newNode;
                 else
-                    addRecursively(Root.Left, newNode);
+                    AddRecursively(Root.Left, newNode);
             }
             else
             {
                 if(Root.Right == null)
                     Root.Right = newNode;
                 else
-                    addRecursively(Root.Right, newNode);
+                    AddRecursively(Root.Right, newNode);
             }
         }
 

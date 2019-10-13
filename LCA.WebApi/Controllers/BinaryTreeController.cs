@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
+using LCA.WebApi.BusinessLogic;
 
 namespace LCA.WebApi.Controllers
 {
     public class BinaryTreeController : ApiController
     {
         [HttpPost]
-        public IHttpActionResult addBinaryTree(long[] values)
+        public IHttpActionResult AddBinaryTree(long[] values)
         {
-            return Ok(0);
+            return Ok(LowestCommonAncestor.Instancia.AddBinaryTree(values));
         }
 
         [HttpGet]
-        public IHttpActionResult getLowestCommonAncestor(long[] tree, long nodeLeft, long nodeRight)
+        public IHttpActionResult getLowestCommonAncestor(long[] tree, long nodeValueFirst, long nodeValueSecond)
         {
-            return Ok(0);
+            return Ok(LowestCommonAncestor.Instancia.GetLowestCommonAncestor(tree, nodeValueFirst, nodeValueSecond));
         }
     }
 }

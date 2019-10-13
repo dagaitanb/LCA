@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LCA.WebApi.Model
 {
-    class Node
+    public class Node
     {
         /// <summary>
         /// Node value
@@ -12,12 +12,12 @@ namespace LCA.WebApi.Model
         public long Value { get; set; }
 
         /// <summary>
-        /// 
+        /// Left Node
         /// </summary>
         public Node Left { get; set; }
 
         /// <summary>
-        /// 
+        /// Right Node
         /// </summary>
         public Node Right { get; set; }
 
@@ -31,9 +31,5 @@ namespace LCA.WebApi.Model
             Right = null;
             Left = null;
         }
-
-        
-
-
     }
 }
