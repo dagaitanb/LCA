@@ -10,7 +10,7 @@ namespace LCA.WebApi.Tests
         /// <summary>
         /// Lowest Common Ancestor instance
         /// </summary>
-        private readonly LowestCommonAncestor LCA = LowestCommonAncestor.Instancia;
+        private readonly LowestCommonAncestor LCA = LowestCommonAncestor.Instance;
 
         /// <summary>
         /// Values of the binary tree
@@ -23,6 +23,18 @@ namespace LCA.WebApi.Tests
             BinaryTree bt = LCA.AddBinaryTree(values);
 
             Assert.IsNotNull(bt);
+        }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            long test1 = LCA.GetLowestCommonAncestor(values, 29, 44);
+            long test2 = LCA.GetLowestCommonAncestor(values, 44, 85);
+            long test3 = LCA.GetLowestCommonAncestor(values, 83, 87);
+
+            Assert.AreEqual(test1, 39);
+            Assert.AreEqual(test2, 67);
+            Assert.AreEqual(test3, 85);
         }
     }
 }

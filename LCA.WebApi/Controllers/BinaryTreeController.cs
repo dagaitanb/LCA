@@ -23,7 +23,7 @@ namespace LCA.WebApi.Controllers
         [Route("AddBinaryTree")]
         public BinaryTree AddBinaryTree(long[] values)
         {
-            return LowestCommonAncestor.Instancia.AddBinaryTree(values);
+            return LowestCommonAncestor.Instance.AddBinaryTree(values);
         }
 
         /// GET: api/BinaryTree
@@ -41,7 +41,7 @@ namespace LCA.WebApi.Controllers
         [Route("GetLowestCommonAncestor")]
         public long GetLowestCommonAncestor(long[] values, long nodeOne, long nodeTwo)
         {
-            return LowestCommonAncestor.Instancia.GetLowestCommonAncestor(values, nodeOne, nodeTwo);
+            return LowestCommonAncestor.Instance.GetLowestCommonAncestor(values, nodeOne, nodeTwo);
         }
     }
 }

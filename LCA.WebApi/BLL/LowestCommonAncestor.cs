@@ -17,7 +17,7 @@ namespace LCA.WebApi.BLL
         /// <summary>
         /// Singleton implementation
         /// </summary>
-        private static readonly LowestCommonAncestor instancia = new LowestCommonAncestor();
+        private static readonly LowestCommonAncestor instance = new LowestCommonAncestor();
 
         /// <summary>
         /// Contructor principal
@@ -27,9 +27,9 @@ namespace LCA.WebApi.BLL
         /// <summary>
         /// Unique instance
         /// </summary>
-        public static LowestCommonAncestor Instancia
+        public static LowestCommonAncestor Instance
         {
-            get { return LowestCommonAncestor.instancia; }
+            get { return LowestCommonAncestor.instance; }
         }
 
         /// <summary>
@@ -74,8 +74,7 @@ namespace LCA.WebApi.BLL
             try
             {
                 BinaryTree binaryTree = AddBinaryTree(values);
-                Node root = binaryTree.Root;
-                return LCA(root, nodeValueFirst, nodeValueSecond);
+                return LCA(binaryTree.Root, nodeValueFirst, nodeValueSecond);
             }
             catch (System.Exception ex)
             {
@@ -105,20 +104,48 @@ namespace LCA.WebApi.BLL
         /// <returns></returns>
         public long LCA(Node root, long first, long second)
         {
+            long result = default;
+
             if (root == null)
                 return default;
 
-            if (root.Value == first)
-                return root.Value;
+            if (first == second)
+                return first;
 
-            if (root.Value == second)
-                return root.Value;
+            this.FindLCA(root, first, second, ref result);
 
-            if (root.Value.CompareTo(first) < 0 && root.Value.CompareTo(second) < 0)
-                return LCA(root.Left, first, second);
-            else if (root.Value.CompareTo(first) > 0 && root.Value.CompareTo(second) > 0)
-                return LCA(root.Right, first, second);
-            return root.Value;
+            return result;
+        }
+
+        /// <summary>
+        /// Find Lowest Common Ancestor
+        /// </summary>
+        /// <returns></returns>
+        public bool FindLCA(Node node, long first, long second, ref long result)
+        {
+            if (node == null)
+                return false;
+
+            // 1. left find and right find; it is lowest common ancestor
+            // 2. node equal to one of node, and left or right find it; it is lowest common ancestor too
+            var findLeft = this.FindLCA(node.Left, first, second, ref result);
+            var findRight = this.FindLCA(node.Right, first, second, ref result);
+
+            if (findLeft && findRight)
+            {
+                result = node.Value;
+            }
+            else if ((node.Value == first || node.Value == second) && (findLeft || findRight))
+            {
+                result = node.Value;
+            }
+
+            if (node.Value == first || node.Value == second)
+            {
+                return true;
+            }
+
+            return findLeft || findRight;
         }
     }
 }
