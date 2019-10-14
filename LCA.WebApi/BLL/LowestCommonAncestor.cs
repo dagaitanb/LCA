@@ -1,6 +1,7 @@
 ﻿using LCA.WebApi.Model;
 using System.ServiceModel;
 using LCA.WebApi.BLL.Exception;
+using System.Collections.Generic;
 
 namespace LCA.WebApi.BLL
 {
@@ -37,7 +38,7 @@ namespace LCA.WebApi.BLL
         /// </summary>
         /// <param name="values"></param>
         /// <returns></returns>
-        public BinaryTree AddBinaryTree(long[] values)
+        public BinaryTree AddBinaryTree(List<long> values)
         {
             try
             {
@@ -52,9 +53,11 @@ namespace LCA.WebApi.BLL
             catch (System.Exception ex)
             {
                 MessageException error = new MessageException { Text = ex.Message, ID = "100" };
-                log.Error(error.ID + ": An error has occurred in AddBinaryTree: \n" + ex);
+                log.Error(error.ID + ": An error has occurred in AddBinaryTree: " + 
+                    ex.Message + "; " + ex.InnerException);
                 throw new FaultException<MessageException> (error,
-                    "100: An error has occurred in AddBinaryTree: \n" + ex.Message + "\n" + ex.InnerException);
+                    error.ID + ": An error has occurred in AddBinaryTree: " + 
+                    ex.Message + "; " + ex.InnerException);
             }
             finally
             {
@@ -69,7 +72,7 @@ namespace LCA.WebApi.BLL
         /// <param name="nodeValueFirst">Node one of Lowest Common Ancestor</param>
         /// <param name="nodeValueSecond">Node two of Lowest Common Ancestor</param>
         /// <returns></returns>
-        public long GetLowestCommonAncestor(long[] values, long nodeValueFirst, long nodeValueSecond)
+        public long GetLowestCommonAncestor(List<long> values, long nodeValueFirst, long nodeValueSecond)
         {
             try
             {
@@ -79,14 +82,11 @@ namespace LCA.WebApi.BLL
             catch (System.Exception ex)
             {
                 MessageException error = new MessageException { Text = ex.Message, ID = "200" };
-                log.Error(error.ID + 
-                    ": An error has occurred in GetLowestCommonAncestor: \n" + 
-                    ex.Message + "\n" + 
-                    ex.InnerException);
+                log.Error(error.ID + ": An error has occurred in GetLowestCommonAncestor: " + 
+                    ex.Message + "; " + ex.InnerException);
                 throw new FaultException<MessageException>(error,
-                    "100: An error has occurred in GetLowestCommonAncestor: \n" + 
-                    ex.Message + "\n" + 
-                    ex.InnerException);
+                    error.ID + ": An error has occurred in GetLowestCommonAncestor: " + 
+                    ex.Message + "; " + ex.InnerException);
             }
             finally
             {

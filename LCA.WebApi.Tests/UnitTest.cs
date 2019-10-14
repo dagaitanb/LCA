@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LCA.WebApi.BLL;
 using LCA.WebApi.Model;
+using System.Collections.Generic;
 
 namespace LCA.WebApi.Tests
 {
@@ -15,8 +16,11 @@ namespace LCA.WebApi.Tests
         /// <summary>
         /// Values of the binary tree
         /// </summary>
-        private readonly long[] values = { 67, 39, 76, 28, 44, 74, 85, 29, 83, 87 };
+        private readonly List<long> values = new List<long>() { 67, 39, 76, 28, 44, 74, 85, 29, 83, 87 };
 
+        /// <summary>
+        /// Test: AddBinaryTree
+        /// </summary>
         [TestMethod]
         public void TestMethod1()
         {
@@ -25,6 +29,9 @@ namespace LCA.WebApi.Tests
             Assert.IsNotNull(bt);
         }
 
+        /// <summary>
+        /// Test: GetLowestCommonAncestor
+        /// </summary>
         [TestMethod]
         public void TestMethod2()
         {
