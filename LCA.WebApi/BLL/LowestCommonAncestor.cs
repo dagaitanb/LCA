@@ -90,7 +90,7 @@ namespace LCA.WebApi.BLL
             }
             finally
             {
-                log.Info("The Binary Tree was created");
+                log.Info("The Lowest Common Ancestor algorithm executed successfully");
             }
             
         }
@@ -126,8 +126,6 @@ namespace LCA.WebApi.BLL
             if (node == null)
                 return false;
 
-            // 1. left find and right find; it is lowest common ancestor
-            // 2. node equal to one of node, and left or right find it; it is lowest common ancestor too
             var findLeft = this.FindLCA(node.Left, first, second, ref result);
             var findRight = this.FindLCA(node.Right, first, second, ref result);
 
