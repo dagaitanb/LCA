@@ -1,14 +1,16 @@
 ﻿using LCA.WebApi.Model;
-using System;
 
-namespace LCA.WebApi.BusinessLogic
+namespace LCA.WebApi.BLL
 {
+    /// <summary>
+    /// Interface ILowestCommonAncestor
+    /// </summary>
     public interface ILowestCommonAncestor
     {
         /// <summary>
         /// Add Binary Tree
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">All values of binary tree</param>
         /// <returns></returns>
         BinaryTree AddBinaryTree(long[] values);
 

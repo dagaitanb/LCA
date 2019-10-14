@@ -1,20 +1,47 @@
 ﻿using System.Web.Http;
-using LCA.WebApi.BusinessLogic;
+using LCA.WebApi.BLL;
+using LCA.WebApi.Model;
 
 namespace LCA.WebApi.Controllers
 {
+    /// <summary>
+    /// BinaryTreeController
+    /// </summary>
+    [RoutePrefix("api/BinaryTreeController")]
     public class BinaryTreeController : ApiController
     {
+        /// POST: api/Binarytree
+        /// <summary>
+        /// Add Binary Tree
+        /// </summary>
+        /// <remarks>
+        /// Create Binary Tree with values
+        /// </remarks>
+        /// <param name="values">All values of binary tree</param>
+        /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult AddBinaryTree(long[] values)
+        [Route("AddBinaryTree")]
+        public BinaryTree AddBinaryTree(long[] values)
         {
-            return Ok(LowestCommonAncestor.Instancia.AddBinaryTree(values));
+            return LowestCommonAncestor.Instancia.AddBinaryTree(values);
         }
 
+        /// GET: api/BinaryTree
+        /// <summary>
+        /// Get Lowest Common Ancestor
+        /// </summary>
+        /// <remarks>
+        /// Get Lowest Common Ancestor of Binary Tree with two nodes
+        /// </remarks>
+        /// <param name="values">Values of Binary Tree</param>
+        /// <param name="nodeOne">First Node</param>
+        /// <param name="nodeTwo">Second node</param>
+        /// <returns></returns>
         [HttpGet]
-        public IHttpActionResult getLowestCommonAncestor(long[] tree, long nodeValueFirst, long nodeValueSecond)
+        [Route("GetLowestCommonAncestor")]
+        public long GetLowestCommonAncestor(long[] values, long nodeOne, long nodeTwo)
         {
-            return Ok(LowestCommonAncestor.Instancia.GetLowestCommonAncestor(tree, nodeValueFirst, nodeValueSecond));
+            return LowestCommonAncestor.Instancia.GetLowestCommonAncestor(values, nodeOne, nodeTwo);
         }
     }
 }

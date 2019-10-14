@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace LCA.WebApi.Model
 {
+    /// <summary>
+    /// Node
+    /// </summary>
     public class Node
     {
         /// <summary>

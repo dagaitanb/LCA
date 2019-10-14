@@ -5,8 +5,15 @@ using System.Web.Http;
 
 namespace LCA.WebApi
 {
+    /// <summary>
+    /// Class WebApiConfig
+    /// </summary>
     public static class WebApiConfig
     {
+        /// <summary>
+        /// Register
+        /// </summary>
+        /// <param name="config">config</param>
         public static void Register(HttpConfiguration config)
         {
             // Configuración y servicios de API web
