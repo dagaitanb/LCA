@@ -35,14 +35,14 @@ namespace LCA.WebApi.Controllers
         /// Get Lowest Common Ancestor of Binary Tree with two nodes
         /// </remarks>
         /// <param name="values">Values of Binary Tree</param>
-        /// <param name="nodeValueFirst">First Node</param>
-        /// <param name="nodeValueSecond">Second node</param>
+        /// <param name="first">First Node</param>
+        /// <param name="second">Second node</param>
         /// <returns>Lowest Common Ancestor</returns>
         [HttpGet]
-        [Route("GetLowestCommonAncestor/{nodeValueFirst}/{nodeValueSecond}")]
-        public string GetLowestCommonAncestor([FromUri] List<long> values, long nodeValueFirst, long nodeValueSecond)
+        [Route("GetLowestCommonAncestor/{first}/{second}")]
+        public long GetLowestCommonAncestor([FromUri] List<long> values, long first, long second)
         {
-            return LowestCommonAncestor.Instance.GetLowestCommonAncestor(values, nodeValueFirst, nodeValueSecond).ToString();
+            return LowestCommonAncestor.Instance.GetLowestCommonAncestor(values, first, second);
         }
     }
 }

@@ -22,6 +22,6 @@ namespace LCA.WebApi.BLL
         /// <param name="nodeOne">Node one of Lowest Common Ancestor</param>
         /// <param name="nodeTwo">Node two of Lowest Common Ancestor</param>
         /// <returns></returns>
-        long GetLowestCommonAncestor(List<long> values, long nodeOne, long nodeTwo);
+        long GetLowestCommonAncestor(List<long> values, long first, long second);
     }
 }

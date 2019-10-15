@@ -69,15 +69,15 @@ namespace LCA.WebApi.BLL
         /// Get Lowest Common Ancestor
         /// </summary>
         /// <param name="values">Binary Tree</param>
-        /// <param name="nodeValueFirst">Node one of Lowest Common Ancestor</param>
-        /// <param name="nodeValueSecond">Node two of Lowest Common Ancestor</param>
+        /// <param name="first">Node one of Lowest Common Ancestor</param>
+        /// <param name="second">Node two of Lowest Common Ancestor</param>
         /// <returns></returns>
-        public long GetLowestCommonAncestor(List<long> values, long nodeValueFirst, long nodeValueSecond)
+        public long GetLowestCommonAncestor(List<long> values, long first, long second)
         {
             try
             {
                 BinaryTree binaryTree = AddBinaryTree(values);
-                return LCA(binaryTree.Root, nodeValueFirst, nodeValueSecond);
+                return LCA(binaryTree.Root, first, second);
             }
             catch (System.Exception ex)
             {
